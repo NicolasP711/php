@@ -8,6 +8,8 @@
 <body>
     <h1>Liste à puce</h1>
     <?php
+
+    // Affichage de la liste
     echo "<ul>
             <li>Fraise</li>
             <li>Banane</li>
