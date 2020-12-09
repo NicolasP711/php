@@ -1,5 +1,5 @@
 <?php
-$admin = true;
+$admin = false;
 $colorText = 'red';
 
 ?>
@@ -21,7 +21,7 @@ $colorText = 'red';
     <?php
 
 
-        if($admin = true){
+        if($admin){
             echo '<p>Tu es le bienvenu<a href="https://google.com" target="_blank"> va sur Google</a></p>';
         } else{
             echo '<b>Vire de là</b>';
