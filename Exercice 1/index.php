@@ -10,13 +10,14 @@
     <?php
 
     // Affichage de la liste
-    echo "<ul>
-            <li>Fraise</li>
-            <li>Banane</li>
-            <li>Pastèque</li>
-            <li>Cerise</li>
-            <li>Melon</li>
-        </ul>";
+        echo "<ul>
+                <li>Fraise</li>
+                <li>Banane</li>
+                <li>Pastèque</li>
+                <li>Cerise</li>
+                <li>Melon</li>
+            </ul>"
+        ;
     ?>
 </body>
 </html>
