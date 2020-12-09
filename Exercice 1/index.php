@@ -14,7 +14,7 @@
             <li>Pastèque</li>
             <li>Cerise</li>
             <li>Melon</li>
-        </ul>"
+        </ul>";
     ?>
 </body>
 </html>
