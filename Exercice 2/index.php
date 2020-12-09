@@ -11,7 +11,7 @@
 $color = 'red';
 $name = 'Nicolas';
 
-echo '<body style ="background-color:red">';
+echo 'style ="background-color:red"';
 echo "<h1>Bonjour $name</h1>";
 
     ?>
