@@ -9,6 +9,8 @@
     <ul>
         <?php
         for($i = 0; $i < 5000; $i++){
+
+            // Au lieu d'afficher $i qui aura tjrs 1 de retard, on affiche $i + 1 pour corriger ce décalage
             echo '<li> ' . ($i+1) . ' </li>';
         }
         ?>
