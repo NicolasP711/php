@@ -6,18 +6,19 @@
     <title>Document</title>
 </head>
 <body>
-    <?php
 
-    $i = 0;
+    <ul>
+        <?php
 
-    while($i <= 5000){
-        echo "<ul>
-                  <li>$i</li>
-              </ul>";
-        $i++;
-    }
+        $i = 0;
 
+        // Tant que $i plus petit que 5000, on boucle
+        while($i < 5000){
+            $i++;
+            echo '<li> ' . $i . '</li>';
+        }
 
-    ?>
+        ?>
+    </ul>
 </body>
 </html>
