@@ -1,6 +1,7 @@
 <?php
 $firstnames = ['Nicolas', 'Jean', 'Aurelie', 'Lucas', 'Thomas', 'Martine', 'Baptiste', 'François', 'Guy', 'Renée'];
 $i = 0;
+$arrayLength = count($firstnames);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -12,13 +13,15 @@ $i = 0;
 <body>
 
     <ul>
-        <?php
-            while($i < 10){
-                echo '<li> ' . $firstnames . ' </li>';
+       <?php
+            while($i < $arrayLength){
+                echo '<li> ' . $firstnames[$i] . ' </li>';
                 $i++;
             }
-        ?>
+       ?>
     </ul>
-
+    <!-- for($i = 0; $i < arrayLength; $i++){
+        echo '<li>' . $firstnames[$i] . '</li>';
+    } -->
 </body>
 </html>
