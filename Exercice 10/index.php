@@ -14,9 +14,27 @@ echo '<br>';
 echo date('Y-m-d H:i:s', time() + 26*24*3600 + 16*3600 );
 echo '<br>';
 
-//Exercice 10-d : créer une variable contenant cette date précise textuelle : "2004-04-16 12:00:00". Le but est d'ajouter 435 jours à cette date puis de l'afficher sous le format : "samedi 25 juin 2005 06h 00m 00s" (strftime sera utile pour la date en français)
+//Exercice 10-d : créer une variable contenant cette date précise textuelle : "2004-04-16 12:00:00". Le but est d'ajouter 435 jours à cette date puis de l'afficher sous le format : "samedi 25 juin 2005 12h 00m 00s" (strftime sera utile pour la date en français)
 
-$dateToTransform = strftime('%A %d %B %Y, %Hh %Mm %Ss', time() - 6084*24*3600 + 435*24*3600);
-echo $dateToTransform;
+//$dateToTransform = strtotime('2004-04-16 12:00:00');
+//$dateToTransform = strftime('%A %d %B %Y, %Hh %Mm %Ss', time() - 6084*24*3600 + 435*24*3600);
+//echo $dateToTransform;
+
+// Correction
+
+// En commentaire car déjà présent plus haut dans le fichier
+// setlocale(LC_ALL, 'fr_FR.utf8', 'fra');
+
+// date de départ sous forme textuelle
+$dateToTransform = '2004-04-16 12:00:00';
+
+// conversion de ladate initiale en timestamp (pour pouvoir faire des calculs dessus)
+$dateToTransformTimestamp = strtotime($dateToTransform);
+
+// Création d'un nouveau timestamp qui correspond au timestamp initial + 435 jours
+$newDateTimestamp = $dateToTransformTimestamp + 435 * 24 * 60 * 60;
+
+// Affichage de la nouvelle date en utilisant son timestamp
+echo strftime('%A %d %B %Y, %Hh %Mm %Ss' , $newDateTimestamp);
 ?>
 
