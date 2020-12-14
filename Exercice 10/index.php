@@ -20,7 +20,7 @@ echo '<br>';
 //$dateToTransform = strftime('%A %d %B %Y, %Hh %Mm %Ss', time() - 6084*24*3600 + 435*24*3600);
 //echo $dateToTransform;
 
-// Correction
+// Correction 10-d
 
 // En commentaire car déjà présent plus haut dans le fichier
 // setlocale(LC_ALL, 'fr_FR.utf8', 'fra');
@@ -28,7 +28,7 @@ echo '<br>';
 // date de départ sous forme textuelle
 $dateToTransform = '2004-04-16 12:00:00';
 
-// conversion de ladate initiale en timestamp (pour pouvoir faire des calculs dessus)
+// conversion de la date initiale en timestamp (pour pouvoir faire des calculs dessus)
 $dateToTransformTimestamp = strtotime($dateToTransform);
 
 // Création d'un nouveau timestamp qui correspond au timestamp initial + 435 jours
