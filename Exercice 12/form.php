@@ -6,7 +6,10 @@
     <title>Document</title>
 </head>
 <body>
-    <?php include 'menu.php'; ?>
-    <h1>Boutique</h1>
+    <form action="display.php" method="GET">
+        <input type="text" name="firstname">
+        <input type="text" name="email">
+        <input type="submit">
+    </form>
 </body>
 </html>
