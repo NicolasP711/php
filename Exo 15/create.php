@@ -14,7 +14,6 @@
     } else {
         $error = 'Vous êtes déjà connecté !';
     }
-
 ?>
 <!DOCTYPE html>
 <html lang="fr">
