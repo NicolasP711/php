@@ -1,7 +1,10 @@
 <?php
+// Obligatoire pour avoir accès aux sessions
 session_start();
- if(isset($_SESSION['firstname']) && isset($_SESSION['lastname'])){
-     $success = 'Bonjour ' . htmlspecialchars($_SESSION['firstname']) . htmlspecialchars($_SESSION['lastname']);
+
+// Si l'array user existe (ce qui revient à dire que l'utilisateur est connecté), on affiche une phrase de bienvenue à l'utilisateur, sinon message l'invitant à se connecter
+ if(isset($_SESSION['user'])){
+     $success = 'Bonjour ' . htmlspecialchars($_SESSION['user']['firstname']) . htmlspecialchars($_SESSION['user']['lastname']);
  } else {
      $error = ' Veuillez vous connecter en cliquant sur la page <a href="create.php">create</a>';
  }

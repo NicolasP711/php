@@ -1,6 +1,9 @@
 <?php
+// Obligatoire pour avoir accès aux sessions
 session_start();
-session_destroy();
+// Supprime l'array dans la session, sans supprimer toute la session comme le ferais un session_destroy();
+// La suppression de l'array est en fait une déconnexion de l'utilisateur
+unset($_SESSION['user']);
 ?>
 <!DOCTYPE html>
 <html lang="fr">

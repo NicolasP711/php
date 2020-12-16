@@ -1,9 +1,15 @@
 <?php
 
+    // Obligatoire pour avoir accès aux sessions
     session_start();
-    if(!isset($_SESSION['firstname']) || !isset($_SESSION['lastname'])){
-        $_SESSION['firstname'] = 'Emile';
-        $_SESSION['lastname'] = 'Louis';
+
+    // Si l'array "user" n'existe pas en session, on le crée avec ses données de sauvegarde et message de succès, sinon on créé un message d'erreur
+    if(!isset($_SESSION['user'])){
+        // l'array "user" contiendra toutes les données de l'utilisateur connecté
+        $_SESSION['user'] = [
+            'firstname' => 'Emile',
+            'lastname' => 'Louis'
+        ];
         $success = 'Vous êtes bien connecté !';
     } else {
         $error = 'Vous êtes déjà connecté !';
