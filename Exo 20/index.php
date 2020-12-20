@@ -2,8 +2,7 @@
     if(
         isset($_POST['email']) &&
         isset($_POST['password']) &&
-        isset($_POST['password_confirmation']) &&
-        isset($_POST['register_date'])
+        isset($_POST['password_confirmation'])
     ){
 
         if(!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){
@@ -16,10 +15,6 @@
 
         if($_POST['password_confirmation'] != $_POST['password']){
             $errors[] = 'Mot de passe NON confirmé';
-        }
-
-        if(!preg_match('/^(?:(?:31(\/|-|\.)(?:0?[13578]|1[02]))\1|(?:(?:29|30)(\/|-|\.)(?:0?[1,3-9]|1[0-2])\2))(?:(?:1[6-9]|[2-9]\d)?\d{2})$|^(?:29(\/|-|\.)0?2\3(?:(?:(?:1[6-9]|[2-9]\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))$|^(?:0?[1-9]|1\d|2[0-8])(\/|-|\.)(?:(?:0?[1-9])|(?:1[0-2]))\4(?:(?:1[6-9]|[2-9]\d)?\d{2})$/', $_POST['register_date'])){
-            $errors[] = 'Mauvaise date';
         }
 
         if(!isset($errors)){
@@ -77,7 +72,6 @@
                 <input type="text" name="email" placeholder="email">
                 <input type="password" name="password" placeholder="password">
                 <input type="password" name="password_confirmation" placeholder="password_confirmation">
-                <input type="text" name="register_date" placeholder="register_date">
                 <input type="submit">
             </form>
 
