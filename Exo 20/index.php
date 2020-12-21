@@ -9,7 +9,7 @@
             $errors[] = 'format email pas bon !';
         }
 
-        if(!preg_match('/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[ !"#\$%&\'()*+,\-.\/:;<=>?@[\\\\\]\^_`{\|}~]).{8,4096}$/', $_POST['password'])){
+        if(!preg_match('/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[ !"#\$%&\'()*+,\-.\/:;<=>?@[\\\\\]\^_`{\|}~]).{8,60}$/', $_POST['password'])){
             $errors[] = 'Mauvais mot de passe entre 8 et 4096 caractères !';
         }
 
