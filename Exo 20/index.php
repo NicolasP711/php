@@ -10,7 +10,7 @@
         }
 
         if(!preg_match('/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[ !"#\$%&\'()*+,\-.\/:;<=>?@[\\\\\]\^_`{\|}~]).{8,60}$/', $_POST['password'])){
-            $errors[] = 'Mauvais mot de passe entre 8 et 4096 caractères !';
+            $errors[] = 'Mauvais mot de passe entre 8 et 60 caractères !';
         }
 
         if($_POST['password_confirmation'] != $_POST['password']){
