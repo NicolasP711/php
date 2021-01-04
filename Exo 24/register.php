@@ -1,9 +1,14 @@
 <?php
+
+    // Inclusion de la fonction permettant de vérifier si le captcha est valide ou pas
+    require 'recaptchaValid.php';
+
     // Appel des variables
     if(
         isset($_POST['email']) &&
         isset($_POST['password']) &&
-        isset($_POST['password_confirmation'])
+        isset($_POST['password_confirmation']) &&
+        isset($_POST['g-recaptcha-response'])
     ){
         // Bloc des vérifs
         if(!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){
@@ -16,6 +21,11 @@
 
         if($_POST['password_confirmation'] != $_POST['password']){
             $errors[] = 'La confirmation ne correspond pas au mot de passe';
+        }
+
+        // Vérification du captcha
+        if(!recaptchaValid($_POST['g-recaptcha-response'], $_SERVER['REMOTE_ADDR'])){
+            $errors[] = 'Veuillez remplir correctement le captcha !';
         }
 
         // Si pas d'erreur
@@ -75,6 +85,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://www.google.com/recaptcha/api.js"></script>
 </head>
 <body>
 <?php
@@ -92,10 +103,11 @@
     } else {
 
         ?>
-            <form action="index.php" method="POST">
+            <form action="register.php" method="POST">
                 <input type="text" name="email" placeholder="email">
                 <input type="password" name="password" placeholder="password">
                 <input type="password" name="password_confirmation" placeholder="password_confirmation">
+                <div class="g-recaptcha" data-sitekey="6LeHihAaAAAAAAE726cgSEocWQJOJ43i9IW77hN2"></div>
                 <input type="submit">
             </form>
 
